@@ -23,7 +23,7 @@ const DetailsPage = (props) => {
         <div>
             <YoutubeVideo youtubeId={video.youtubeId}/>
             <RecommendationsContainer videoId={videoId}/>
-            <AddRecommendation/>
+            <AddRecommendation videoId={videoId}/>
         </div>
     );
 }
