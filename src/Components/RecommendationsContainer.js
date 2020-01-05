@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import VideoPreview from "./VideoPreview";
 import Recommendation from "./Recommendation";
 
-const RecommendationsContainer = ({id}) => {
+const RecommendationsContainer = ({videoId}) => {
     useEffect(() => {
         fetchRecommendations();
     }, []);
@@ -10,9 +10,9 @@ const RecommendationsContainer = ({id}) => {
     const[recommendations, setRecommendations] = useState([]);
 
     const fetchRecommendations = async () => {
-        const data = await fetch("http://localhost:8762/video/" +  id + "/recommendation");
+        const data = await fetch("http://localhost:8762/video/" +  videoId + "/recommendation");
         const recommendations = await data.json();
-        setRecommendations(recommendations);
+        setRecommendations(Array.from(recommendations));
     };
 
     return (
