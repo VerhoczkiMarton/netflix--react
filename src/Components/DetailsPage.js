@@ -7,7 +7,7 @@ const DetailsPage = (props) => {
     return (
         <div>
             <YoutubeVideo/>
-            <RecommendationsContainer/>
+            <RecommendationsContainer id={props.match.params.id}/>
             <AddRecommendation/>
         </div>
     );
